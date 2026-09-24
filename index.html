@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - Jenita</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header & Navigasi -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#home" class="logo" id="navLogo">Jenita.</a>
+            <div class="menu-toggle" id="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#tentang">Tentang Saya</a></li>
+                <li><a href="#profil">Profil</a></li>
+                <li><a href="#minat">Minat</a></li>
+                <li><a href="#citacita">Cita-Cita</a></li>
+                <li><button class="theme-toggle" id="themeToggle" title="Ganti Tema">🌙</button></li>
+                <li><button class="edit-btn-nav" id="openEditModal">Edit Profil</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Bagian Hero -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <div class="hero-img-wrapper">
+                <img id="displayFoto" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80" alt="Foto Profil" class="profile-img">
+            </div>
+            <div class="hero-text">
+                <span class="badge" id="displayJurusan">DKV (Desain komunikasi visual)</span>
+                <h1 id="displayName">Jenita</h1>
+                <p class="nickname">Panggilan: <span id="displayPanggilan">Jenita</span> | Kelas: <span id="displayKelas">X DKV 2</span></p>
+                <p class="tagline" id="displayTagline">"Berani bermimpi, konsisten berproses"</p>
+                <div class="hero-buttons">
+                    <a href="#tentang" class="btn btn-primary">Tentang Saya</a>
+                    <a href="#profil" class="btn btn-secondary">Lihat Profil</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Tentang Saya -->
+    <section id="tentang" class="section">
+        <div class="container">
+            <h2 class="section-title">Tentang Saya</h2>
+            <div class="card tentang-card">
+                <p id="displayTentang" class="tentang-desc">
+                    Saya adalah seorang pelajar kelas X di Indonesia yang memiliki minat besar dalam bidang teknologi, pengembangan diri, dan literasi digital. Aktif dalam kegiatan akademik maupun organisasi sosial, saya memiliki komitmen tinggi terhadap kedisiplinan, kerja sama tim, dan terus belajar hal-hal baru untuk mempersiapkan diri menghadapi dunia karier di masa depan.
+                </p>
+                <p id="displayShortDesc" class="short-desc-highlight">
+                    Pelajar SMK | Tertarik pada pemrograman dan dunia digital | Suka tantangan baru dan aktif berkarya di komunitas daring
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Profil -->
+    <section id="profil" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Profil Siswa</h2>
+            <div class="grid-profil">
+                <div class="card profil-card">
+                    <div class="profil-icon">🏫</div>
+                    <h3>Kelas</h3>
+                    <p id="cardKelas">X DKV 2</p>
+                </div>
+                <div class="card profil-card">
+                    <div class="profil-icon">🎨</div>
+                    <h3>Jurusan</h3>
+                    <p id="cardJurusan">DKV (Desain komunikasi visual)</p>
+                </div>
+                <div class="card profil-card">
+                    <div class="profil-icon">🎯</div>
+                    <h3>Konsentrasi Keahlian</h3>
+                    <p id="cardKonsentrasi">desain komunikasi visual</p>
+                </div>
+                <div class="card profil-card" id="minat">
+                    <div class="profil-icon">💡</div>
+                    <h3>Minat</h3>
+                    <p id="cardMinat">Desain grafis</p>
+                </div>
+                <div class="card profil-card">
+                    <div class="profil-icon">✨</div>
+                    <h3>Hobi</h3>
+                    <p id="cardHobi">Menggambar</p>
+                </div>
+                <div class="card profil-card">
+                    <div class="profil-icon">📚</div>
+                    <h3>Bidang Ingin Dipelajari</h3>
+                    <p id="cardBidang">Desain</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Cita-Cita -->
+    <section id="citacita" class="section">
+        <div class="container">
+            <h2 class="section-title">Cita-Cita</h2>
+            <div class="card citacita-card">
+                <div class="citacita-icon">🚀</div>
+                <h3 id="displayCitacita">Desainer</h3>
+                <p>Menjadi motivasi utama saya dalam tekun belajar, mengasah keterampilan, dan berkarya setiap hari di SMK.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Jenita - Portofolio Siswa Kelas X SMK. Dibuat dengan semangat belajar.</p>
+    </footer>
+
+    <!-- Tombol Kembali ke Atas -->
+    <button id="backToTop" class="back-to-top" title="Kembali ke atas">↑</button>
+
+    <!-- Notifikasi Simpan -->
+    <div id="toast" class="toast">Perubahan berhasil disimpan!</div>
+
+    <!-- Modal Edit Profil -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit Profil Portofolio</h3>
+                <span class="close-btn" id="closeModal">&times;</span>
+            </div>
+            <form id="editForm" class="edit-form">
+                <div class="form-group">
+                    <label>Nama Lengkap</label>
+                    <input type="text" id="inputNama" required>
+                </div>
+                <div class="form-group">
+                    <label>Nama Panggilan</label>
+                    <input type="text" id="inputPanggilan" required>
+                </div>
+                <div class="form-group">
+                    <label>Kelas</label>
+                    <input type="text" id="inputKelas" required>
+                </div>
+                <div class="form-group">
+                    <label>Jurusan / Program Keahlian</label>
+                    <input type="text" id="inputJurusan" required>
+                </div>
+                <div class="form-group">
+                    <label>Konsentrasi Keahlian</label>
+                    <input type="text" id="inputKonsentrasi" required>
+                </div>
+                <div class="form-group">
+                    <label>Motto / Tagline</label>
+                    <input type="text" id="inputTagline" required>
+                </div>
+                <div class="form-group">
+                    <label>Tentang Saya (Deskripsi Panjang)</label>
+                    <textarea id="inputTentang" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Deskripsi Singkat Diri</label>
+                    <textarea id="inputShortDesc" rows="2" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Minat</label>
+                    <input type="text" id="inputMinat" required>
+                </div>
+                <div class="form-group">
+                    <label>Hobi</label>
+                    <input type="text" id="inputHobi" required>
+                </div>
+                <div class="form-group">
+                    <label>Bidang yang Ingin Dipelajari</label>
+                    <input type="text" id="inputBidang" required>
+                </div>
+                <div class="form-group">
+                    <label>Cita-Cita</label>
+                    <input type="text" id="inputCitacita" required>
+                </div>
+                <div class="form-group">
+                    <label>Foto Profil (Pilih File dari Perangkat)</label>
+                    <input type="file" id="inputFoto" accept="image/*">
+                </div>
+                <div class="modal-buttons">
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                    <button type="button" id="resetBtn" class="btn btn-warning">Reset Default</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+  </html>
