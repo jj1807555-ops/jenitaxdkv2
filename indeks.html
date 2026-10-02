@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Siswa - JENITA</title>
+    
+    <!-- Font Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- SEMUA CSS DIMASUKKAN DI SINI AGAR TAMPILAN SESUAI GAMBAR 2 -->
+    <style>
+        :root {
+            --primary: #6c5ce7;
+            --primary-light: #8075e5;
+            --accent: #1dd1a1;
+            --bg-color: #f8f9fe;
+            --card-bg: #ffffff;
+            --text-color: #2d3436;
+            --text-muted: #636e72;
+            --radius-pill: 50px;
+            --shadow: 0 8px 20px rgba(108, 92, 231, 0.12);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #0f111a;
+            --card-bg: #1e202e;
+            --text-color: #f5f6fa;
+            --text-muted: #a4b0be;
+            --shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 1.5rem 0;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: var(--card-bg);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--text-color);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .btn-icon {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        /* HERO SECTION (DIDESAIN SESUAI GAMBAR 2) */
+        .hero {
+            text-align: center;
+            padding: 2rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 0.2rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 1.2rem;
+        }
+
+        .hero-avatar {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary);
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+        }
+
+        /* BADGES / PILLS */
+        .badge-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            width: 100%;
+            max-width: 320px;
+            margin-bottom: 1.5rem;
+        }
+
+        .badge-pill {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--radius-pill);
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(108, 92, 231, 0.2);
+        }
+
+        .motto-text {
+            font-style: italic;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            padding: 0 1rem;
+        }
+
+        /* ACTION BUTTONS */
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            width: 100%;
+            max-width: 280px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-pill);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* FLOATING EDIT BUTTON (SEPERTI IRAMA GAMBAR 2) */
+        .floating-edit {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 15px rgba(29, 209, 161, 0.4);
+            z-index: 99;
+        }
+
+        /* CARDS & SECTIONS */
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+
+        /* FORM EDIT */
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.7rem;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .toast {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            font-weight: 600;
+            display: none;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="toast" class="toast">Data berhasil disimpan! ✨</div>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">Porto<span>Siswa</span></a>
+            <div class="nav-right">
+                <button id="theme-toggle" class="btn-icon">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- HERO SECTION (SAMA SEPERTI GAMBAR 2) -->
+        <section id="home" class="hero">
+            <h1 class="hero-title" id="view-nama-lengkap">JENITA</h1>
+            <p class="hero-subtitle">Halo, panggil saja <span id="view-nama-panggilan">JENITA</span> 👋</p>
+
+            <img id="view-foto" class="hero-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400" alt="Foto Profil JENITA">
+
+            <div class="badge-list">
+                <div class="badge-pill" id="view-kelas">X DKV / 10 SMK</div>
+                <div class="badge-pill" id="view-jurusan">Desain Komunikasi Visual</div>
+            </div>
+
+            <p class="motto-text" id="view-motto">"Berpikir kreatif tanpa batas, mengeksekusi dengan rasa dan detail."</p>
+
+            <div class="btn-group">
+                <a href="#about" class="btn btn-primary">Tentang Saya</a>
+                <a href="#profile" class="btn btn-outline">Lihat Profil</a>
+            </div>
+        </section>
+
+        <!-- TENTANG SAYA -->
+        <section id="about" class="card">
+            <h2 class="section-title">Tentang Saya</h2>
+            <p id="view-tentang-saya">Halo! Saya Jenita, siswa kelas 10 jurusan Desain Komunikasi Visual (DKV) yang punya ketertarikan besar pada dunia seni dan visual.</p>
+        </section>
+
+        <!-- PROFIL & MINAT -->
+        <section id="profile" class="card">
+            <h2 class="section-title">Profil & Minat</h2>
+            <p><strong>Konsentrasi:</strong> <span id="view-konsentrasi">Desain Komunikasi Visual</span></p>
+            <p><strong>Minat:</strong> <span id="view-minat">Desain Komunikasi Visual</span></p>
+            <p><strong>Hobi:</strong> <span id="view-hobi">Menggambar dan Menulis</span></p>
+            <p><strong>Cita-Cita:</strong> <span id="view-cita-cita">Desainer</span></p>
+        </section>
+
+        <!-- FORM EDIT PROFIL -->
+        <section id="edit" class="card">
+            <h2 class="section-title">Edit Profil</h2>
+            <form id="form-edit">
+                <div class="form-group">
+                    <label>Nama Lengkap</label>
+                    <input type="text" id="input-nama-lengkap">
+                </div>
+                <div class="form-group">
+                    <label>Nama Panggilan</label>
+                    <input type="text" id="input-nama-panggilan">
+                </div>
+                <div class="form-group">
+                    <label>Ganti Foto (Upload dari HP/Laptop)</label>
+                    <input type="file" id="input-foto" accept="image/*">
+                </div>
+                <div class="form-group">
+                    <label>Kelas</label>
+                    <input type="text" id="input-kelas">
+                </div>
+                <div class="form-group">
+                    <label>Jurusan</label>
+                    <input type="text" id="input-jurusan">
+                </div>
+                <div class="form-group">
+                    <label>Motto / Tagline</label>
+                    <input type="text" id="input-motto">
+                </div>
+                <div class="form-group">
+                    <label>Tentang Saya</label>
+                    <textarea id="input-tentang-saya" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Simpan Profil</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- TOMBOL PENSIL EDIT MELAYANG (FLOATING BUTTON) -->
+    <a href="#edit" class="floating-edit" title="Edit Profil">✏️</a>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        const defaultData = {
+            namaLengkap: "JENITA",
+            namaPanggilan: "JENITA",
+            kelas: "X DKV / 10 SMK",
+            jurusan: "Desain Komunikasi Visual",
+            konsentrasi: "Desain Komunikasi Visual",
+            motto: '"Berpikir kreatif tanpa batas, mengeksekusi dengan rasa dan detail."',
+            tentangSaya: "Halo! Saya Jenita. Seorang siswa kelas 10 jurusan Desain Komunikasi Visual (DKV) yang punya ketertarikan besar pada dunia seni dan visual.",
+            minat: "Desain Komunikasi Visual",
+            hobi: "Menggambar dan Menulis",
+            citaCita: "Desainer",
+            foto: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400"
+        };
+
+        const STORAGE_KEY = 'PORTO_JENITA_DATA';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadData();
+            setupLivePreview();
+        });
+
+        function loadData() {
+            const data = JSON.parse(localStorage.getItem(STORAGE_KEY)) || defaultData;
+            
+            document.getElementById('view-nama-lengkap').innerText = data.namaLengkap;
+            document.getElementById('view-nama-panggilan').innerText = data.namaPanggilan;
+            document.getElementById('view-kelas').innerText = data.kelas;
+            document.getElementById('view-jurusan').innerText = data.jurusan;
+            document.getElementById('view-motto').innerText = data.motto;
+            document.getElementById('view-tentang-saya').innerText = data.tentangSaya;
+            document.getElementById('view-konsentrasi').innerText = data.konsentrasi;
+            document.getElementById('view-minat').innerText = data.minat;
+            document.getElementById('view-hobi').innerText = data.hobi;
+            document.getElementById('view-cita-cita').innerText = data.citaCita;
+            document.getElementById('view-foto').src = data.foto;
+
+            // Form Fill
+            document.getElementById('input-nama-lengkap').value = data.namaLengkap;
+            document.getElementById('input-nama-panggilan').value = data.namaPanggilan;
+            document.getElementById('input-kelas').value = data.kelas;
+            document.getElementById('input-jurusan').value = data.jurusan;
+            document.getElementById('input-motto').value = data.motto;
+            document.getElementById('input-tentang-saya').value = data.tentangSaya;
+        }
+
+        function setupLivePreview() {
+            document.getElementById('input-foto').addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = (event) => {
+                        document.getElementById('view-foto').src = event.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        }
+
+        document.getElementById('form-edit').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const dataToSave = {
+                namaLengkap: document.getElementById('input-nama-lengkap').value,
+                namaPanggilan: document.getElementById('input-nama-panggilan').value,
+                kelas: document.getElementById('input-kelas').value,
+                jurusan: document.getElementById('input-jurusan').value,
+                motto: document.getElementById('input-motto').value,
+                tentangSaya: document.getElementById('input-tentang-saya').value,
+                foto: document.getElementById('view-foto').src
+            };
+
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(dataToSave));
+            
+            const toast = document.getElementById('toast');
+            toast.style.display = 'block';
+            setTimeout(() => toast.style.display = 'none', 3000);
+        });
+
+        // Dark Mode Toggle
+        const themeBtn = document.getElementById('theme-toggle');
+        themeBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            themeBtn.innerText = newTheme === 'dark' ? '☀️' : '🌙';
+        });
+    </script>
+</body>
+</html>
